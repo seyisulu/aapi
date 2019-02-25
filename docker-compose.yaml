@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+  api:
+    build: ./api
+    container_name: api
+    command: ["python", "main.py"]
+    volumes:
+      - ./api:/api
+    networks:
+      - aapinet
+    ports:
+      - "5000:5000"
+
+networks:
+  aapinet:
